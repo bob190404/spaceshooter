@@ -1,0 +1,918 @@
+ 
+ /* font */
+ @font-face {
+ font-family: 'font'; 
+ src: url('./PixelCode.otf'); 
+}
+ 
+/* html */
+html {
+    font-family: font;
+    background-color: black;
+    background-image: url("../media/backgound.png");
+    background-repeat: repeat;
+    background-size: cover;
+    overflow: hidden;
+    animation: moveBackground 460s linear infinite; 
+}
+
+.audio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.audio img {
+  width: 50px;
+  filter: invert(1);
+  padding: 20px;
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 10px;
+  cursor: pointer;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #00000000;
+  border-radius: 6px;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  transition: .2s ease-in-out;
+  background: rgb(110, 65, 65);
+  cursor: pointer;
+}
+
+
+/* LEADERBOARD */
+
+#leaderboard {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  z-index: 100;
+  display: none;
+  top: 0;
+}
+
+.leaderboardbox {
+  margin-top: 100px;
+  width: 40rem;
+  height: 45rem;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.801);
+}
+
+.leaderboard-data {
+  overflow-y: scroll;
+  height: 41rem;
+}
+
+.leaderboard-image {
+  float: left;
+  width: 30px;
+  position: relative;
+  left: 150px;
+  top: 7px;
+}
+
+.itembox {
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.leaditembox {
+  margin: 0;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.item {
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.leaditem {
+  margin: 0;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.right {
+  float: right;
+  margin-right: 30px;
+}
+
+/* controls */
+#controls-screen {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  z-index: 100;
+  display: none;
+  top: 0;
+}
+
+@keyframes hidecontrols {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+.back1 {
+  color: white;
+  font-size: 50px;
+  margin-left: 150px;
+  margin-top: 150px;
+  cursor: pointer;
+  text-shadow: 3px 3px rgb(146, 1, 1);
+  animation: back 2s ease-in-out infinite forwards;
+  position: absolute;
+}
+
+@keyframes back {
+  0% {
+    margin-left: 175px;
+  }
+
+  50% {
+    margin-left: 125px;
+  }
+
+  100% {
+    margin-left: 175px;
+  }
+  
+}
+
+.back2 {
+  color: white;
+  font-size: 20px;
+  margin-top: -5px;
+  margin-left: 10px;
+
+}
+
+@keyframes showcontrols {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+.controlstext {
+     display: grid;
+      grid-template-columns: 1fr 1fr; /* Two equal columns */
+      grid-template-rows: 100vh; /* Full height for each row */
+}
+
+.one img {
+  width: 30rem;
+  margin-top: 20rem;
+  filter: invert(1);
+}
+
+
+.controls2 {
+  width: 100px;
+  position: relative;
+  left: 50%;
+  top: 22rem;
+  transform: translate(-50%);
+  animation: moveship 4s ease-in-out forwards infinite;
+}
+
+.controls3 {
+  width: 70px;
+  position: relative;
+  left: 53%;
+  top: 22rem;
+  transform: translate(-50%);
+  animation: movecursor 4s ease-in-out forwards infinite;
+}
+
+.infotext {
+  font-size: 25px;
+  text-shadow: 3px 3px rgb(146, 1, 1);
+}
+
+.infotext2 {
+  position: relative;
+  top: 50px;
+  font-size: 25px;
+  text-shadow: 3px 3px rgb(146, 1, 1);
+}
+
+@keyframes moveship {
+  0% {
+    left: 53%;
+  }
+  30% {
+    left: 45%;
+  }
+60% {
+  left: 59%;
+}
+  100% {
+    left: 53%;
+  }
+}
+
+@keyframes movecursor {
+  0% {
+    left: 56%;
+  }
+  30% {
+    left: 48%;
+  }
+60% {
+  left: 62%;
+}
+  100% {
+    left: 56%;
+  }
+}
+
+.controlstext {
+  color: white;
+}
+
+
+
+/* background */
+@keyframes moveBackground {
+    from {
+        background-position-y: 0;
+        background-position-x: 0;
+    }
+    to {
+        background-position-y: 400%;
+        background-position-x: 400%; 
+    }
+}
+
+ .bottomback {
+  background-image: url("../media/bottombackground.png");
+  background-size: contain;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 20vh;
+  left: 0px;
+ }
+
+.astroid {
+position: absolute;
+left: -10px;
+top: -100px;
+animation: astroid 120s infinite forwards;
+filter: brightness(.8);
+pointer-events: none;
+}
+
+.astroid img {
+  width: 200px;
+}
+
+@keyframes astroid {
+  0% {
+    rotate: 0deg;
+left: -100px;
+top: -100px;
+  }
+  
+
+  100% {
+    rotate: 360deg;
+    left: 110vw;
+  top: 110vh;
+  }
+}
+
+.planet {
+  position: absolute;
+right: -30px;
+top: -30px;
+filter: brightness(.6);
+pointer-events: none;
+animation: planet 300s forwards infinite;
+}
+
+.planet2 {
+  position: absolute;
+top: 30%;
+    left: 20%;
+filter: brightness(.7);
+pointer-events: none;
+animation: planet 250s forwards infinite;
+transform-origin: center center;
+}
+
+.planet2 img {
+  width: 250px;
+}
+
+@keyframes planet {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+  
+}
+
+ /* GAME */
+  #game-container {
+    position: absolute;
+    width: 1200px; 
+    height: 800px;
+    margin: 0 auto;
+    border: 2px solid #fdfdfd;
+    background-color: rgba(0, 0, 0, 0.801);
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  @keyframes Showgame {
+    0% {
+      top: -100%;
+    }
+    100% {
+      top: 50%;
+    }
+
+  }
+
+  @keyframes Hidegame {
+    0% {
+      top: 50%;
+    }
+    99% {
+      top: -100%;
+      display: block;
+    }
+
+    100% {
+      top: -100%;
+      display: none;
+    }
+
+  }
+
+    .enemy {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    background-image: url("../media/enemy1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: enemy 1s ease-in-out infinite forwards;
+    pointer-events: none;
+  }
+
+  .enemy2 {
+        position: absolute;
+    width: 55px;
+    height: 55px;
+    background-color: transparent;
+    background-image: url("../media/enemy2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: enemy 1s ease-in-out infinite forwards;
+    pointer-events: none;
+  }
+
+  .enemy3 {
+        position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    background-image: url("../media/enemy3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: enemy 1s ease-in-out infinite forwards;
+    pointer-events: none;
+  }
+
+  .enemy4 {
+        position: absolute;
+    width: 65px;
+    height: 65px;
+    background-color: transparent;
+    background-image: url("../media/enemy4.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: enemy 1s ease-in-out infinite forwards;
+    pointer-events: none;
+  }
+
+  .enemy5 {
+        position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    background-image: url("../media/enemy5.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: enemy 1s ease-in-out infinite forwards;
+    pointer-events: none;
+  }
+
+  .enemy6 {
+        position: absolute;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    background-image: url("../media/enemy6.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: enemy 1s ease-in-out infinite forwards;
+    pointer-events: none;
+  }
+
+  .damage-indicator {
+    font-size: 17px;
+    color: red;
+    animation: damage .5s ease-in-out forwards;
+  }
+
+  @keyframes damage {
+    0% {
+      font-size: 17px;
+    }
+    100% {
+      font-size: 0px;
+    }
+  }
+
+  @keyframes enemy {
+    0% {
+      rotate: 4deg;
+      scale: 1.1;
+    }
+
+    50% {
+      rotate: 0deg;
+      scale: .9;
+    }
+
+    100% {
+      rotate: 4deg;
+      scale: 1.1;
+    }
+  }
+
+
+  @keyframes enemydeath {
+    0% {
+      scale: 1;
+      rotate: 0deg;
+    }
+
+    35% {
+      scale: 1.2;
+      rotate: 0deg;
+      filter: hue-rotate(180deg);
+    }
+
+    100% {
+      scale: 0;
+      rotate: 1080deg;
+      filter: hue-rotate(180deg);
+    }
+  }
+
+  
+  .bullet {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-image: url("../media/bullets.png");
+    background-size: cover;
+    border-radius: 100px;
+    pointer-events: none;
+  }
+  #player {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: none;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url("../media/ship1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+   #score-display {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 25px;
+      color: rgb(255, 255, 255);
+      z-index: 100;
+      pointer-events: none;
+    }
+
+/* HOMESCREEN */
+  .titel {
+    color: white;
+    font-size: 50px;
+    text-shadow: 5px 5px rgb(146, 1, 1);
+    animation: animatetitel 4s ease-in-out infinite;
+    animation-fill-mode: forwards;
+    position: absolute;
+    width: 500px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    top: -20vh;
+    pointer-events: none;
+  }
+
+  @keyframes animatetitel {
+    0% {
+        rotate: 4deg;
+        margin-bottom: 400px;
+    }
+
+    50% {
+        rotate: -4deg;
+        margin-bottom: 350px;
+    }
+
+    100% {
+        rotate: 4deg;
+        margin-bottom: 400px;
+    }
+  }
+
+  .startbtn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: font;
+    color: white;
+    transition: .5s ease-in-out;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    top: 40px;
+    position: relative;
+  }
+
+  .startbtn:hover {
+text-shadow: 5px 5px rgb(146, 1, 1);
+border-left: 0px solid white;
+    border-top: 0px solid white;
+    border-right: 0px solid white;
+    border-bottom: 0px solid white;
+
+animation: border .5s ease-in-out infinite;
+animation-fill-mode: forwards;
+  }
+
+  .menubtn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: font;
+    color: white;
+    transition: .5s ease-in-out;
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    margin: 20px;
+    top: 10px;
+    position: relative;
+  }
+
+  .menu {
+    position: absolute;
+     left: 50%;
+     top: 30vh;
+    transform: translate(-50%);
+    width: 500px;
+  }
+
+   .menubtn:hover {
+text-shadow: 5px 5px rgb(146, 1, 1);
+border-left: 0px solid white;
+    border-top: 0px solid white;
+    border-right: 0px solid white;
+    border-bottom: 0px solid white;
+
+animation: border .5s ease-in-out infinite;
+animation-fill-mode: forwards;
+  }
+
+  @keyframes border {
+    0% {
+    border-left: 2px solid white;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    rotate: 1deg;
+    }
+
+    25% {
+    border-left: 2px solid black;
+    border-top: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    rotate: 1deg;
+    }
+
+    50% {
+  border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid white;
+    border-bottom: 2px solid black;
+     rotate: -1deg;
+    }
+
+     75% {
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid white;
+    rotate: -1deg;
+    }
+     100% {
+    border-left: 2px solid white;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    rotate: 1deg;
+    }
+  }
+
+      .chooseship {
+      width: 800px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 10px;
+      margin-top: 100px;
+    }
+
+
+.ship {
+ border: 0px solid black;
+ padding: 20px;
+ margin: 20px;
+ text-align: center;
+ cursor: pointer;
+}
+
+.ship:hover {
+   animation: ship .5s ease-in-out infinite;
+}
+
+@keyframes ship {
+0% {
+scale: 1;
+rotate: 1deg;
+}  
+
+50% {
+  scale: 1.1;
+  rotate: -1deg;
+}
+100% {
+  scale: 1;
+  rotate: 1deg;
+}
+}
+
+.ship img {
+ max-width: 100%;
+ height: auto;
+ background-color: none;
+}
+
+.shipchosen {
+  position: absolute;
+  margin-top: -190px;
+    margin-left: 275px;
+  animation: chooseship 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.shipchosen img{ 
+  width: 100px;
+}
+
+.hidden {
+  display: none ;
+}
+
+@keyframes chooseship {
+  0% {
+     margin-top: 800px;
+    margin-left: 50%;
+transform: translate(-50%); 
+  }
+
+  100% {
+    margin-top: -250px;
+    margin-left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+.animate {
+  animation: chosen 1s ease-in-out forwards infinite;
+}
+
+@keyframes chosen {
+  0% {
+    rotate: 1deg;
+    scale: 1;
+  }
+
+  50% {
+    rotate: -1deg;
+    scale: 1.1;
+  }
+
+  100% {
+    rotate: 1deg;
+    scale: 1;
+  }
+}
+
+.grey {
+  filter: grayscale(1);
+  pointer-events: none;
+}
+
+@keyframes flyOut {
+  from {
+    margin-top: -250px;
+    margin-left: 50%;
+    transform: translate(-50%);
+  }
+  to {
+    margin-top: -1000px;
+    margin-left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+.animate-out {
+  animation: flyOut 1s forwards;
+}
+
+  .copyright {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: black;
+  padding: 10px;
+  text-align: right;
+  text-shadow: 2px 2px white;
+}
+
+
+  /* start & end screen */
+  #start-screen,
+  #end-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: block;
+    
+  }
+
+  @keyframes hide {
+    0% { 
+      left: 50%;
+      display: block;
+    }
+
+    99% {
+      left: 150%;
+      display: block;
+    }
+
+    100% {
+      left: 150%;
+  display: none;
+    }
+  }
+
+   @keyframes show {
+    0% { 
+      left: 150%;
+      
+    }
+
+    99% {
+      left: 50%;
+      display: block;
+    }
+
+    100% {
+      left: 50%;
+  display: block;
+    }
+  }
+
+
+/* GAME OVER SCREEN */
+.gameover {
+  color: white;
+    font-size: 50px;
+    text-shadow: 5px 5px rgb(146, 1, 1);
+    animation: animatetitel 4s ease-in-out infinite;
+    animation-fill-mode: forwards;
+    position: absolute;
+    width: 500px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    top: -250px;
+}
+
+.score   {
+  font-size: 25px;
+  color: white;
+}
+
+.inputname {
+  border: none;
+  font-family: font;
+  color: white;
+  background-color: #00000000;
+  font-size: 20px;
+  width: 150px;
+  color: white;
+}
+
+.inputscore {
+  border: 2px solid rgba(255, 255, 255, 0);
+  font-family: font;
+  color: white;
+  background-color: #00000000;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.inputscore:hover {
+  animation: border .5s ease-in-out forwards infinite;
+}
+
+#clearLeaderboard {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: transparent;
+  border: none;
+}
+
+
+
+
+
+
+

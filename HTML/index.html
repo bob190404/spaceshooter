@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SPACE SHOOTER</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link id="icon" rel="shortcut icon" href="../media/ship1.png" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="bottomback"></div>
+  <div class="planet"><img src="../media/planet.png" alt=""></div>
+<div class="planet2"><img src="../media/planet2.png" alt=""></div>
+<div class="astroid"><img src="../media/astroid.png" alt=""></div>
+
+
+  <!-- Controls -->
+<div id="controls-screen">
+<div class="back1" onclick="showMenu()"> <- <br> <p class="back2">Back</p> </div>
+
+<div class="controlstext">
+<div class="one">
+  <center>
+    <img id="spacebarimg" src="../media/spacebar.png" alt="">
+    <p class="infotext">HOLD Spacebar to Shoot</p> 
+
+  </center>
+</div>
+
+<div class="two">
+
+  <div class="shipimg">
+    <img class="controls2" src="../media/ship1.png" alt="">
+  </div>
+
+  <div class="cursor">
+    <img class="controls3" src="../media/cursor.png" alt="">
+  </div>
+
+  <center>
+  <p class="infotext2">Move cursor to move</p></center>
+
+</div>
+</div>
+</div>
+
+
+  <!-- Leaderboard -->
+<div id="leaderboard">
+<div class="back1" onclick="showMenu2()"> <- <br> <p class="back2">Back</p> </div>
+<center>
+<div class="leaderboardbox">
+  <div class="itembox">
+  <img src="" alt="">
+  <div class="leaditembox">Name:<div class="right">Score:</div></div>
+</div>
+<div class="leaderboard-data">
+</div>
+</div>
+
+
+
+</center>
+</div>
+
+<!-- Background Music -->
+<div onclick="toggleMusic()" class="audio">
+  <img id="musicImage" src="../media/mute.png" alt="">
+</div>
+
+<!-- START SCREEN -->
+
+<div id="start-screen">
+
+<audio id="bgMusic" autoplay loop>
+  <source src="../media/background music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="shootSound">
+  <source src="../media/shooting.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="deathSound">
+  <source src="../media/death.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="startgame">
+  <source src="../media/startgame.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<audio id="click">
+  <source src="../media/click.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+ <div class="menu">
+<button class="menubtn" onclick="showcontrols()">Controls</button>
+<button class="menubtn" onclick="showLeaderboard()">LeaderBoard</button>
+</div>
+
+<div class="titel">SPACE SHOOTER</div>
+
+  <button class="startbtn" onclick="gameStart()">Start</button>
+
+  <div class="chooseship">
+      <div class="shipchosen" >
+        <img class="shipchosenimg" src="../media/ship1.png" alt="">
+      </div>
+
+      
+    <div class="ship grey" onclick="choose(event, '../media/ship1.png')">
+      <img src="../media/ship1.png" alt=""></div>
+    <div class="ship" onclick="choose(event, '../media/ship2.png')">
+      <img src="../media/ship2.png" alt=""></div>
+    <div class="ship" onclick="choose(event, '../media/ship3.png')">
+      <img src="../media/ship3.png" alt=""></div>
+    <div class="ship" onclick="choose(event, '../media/ship4.png')">
+      <img src="../media/ship4.png" alt=""></div>
+    <div class="ship" onclick="choose(event, '../media/ship5.png')">
+      <img src="../media/ship5.png" alt=""></div>
+  </div>
+
+  </div>
+
+
+<!-- GAME CONTAINER  -->
+
+<div id="game-container" style="display: none;">
+ 
+    <div id="score-display">Score: <span id="current-score">0</span></div>
+  <div id="player"></div>
+  
+</div>
+
+<!-- ENDSCREEN -->
+
+<div id="end-screen" style="display: none;">
+
+  <p class="gameover" style="color: white;">Game Over!  
+    </p>
+
+    <div class="submit-score">
+    <form method="post" onsubmit="submitScore(event)">
+      <input class="inputname" type="text" id="playerName" placeholder="Name" maxlength="15"  required>
+      <input class="inputscore" type="submit" value="Submit Score">
+    </form>
+  </div>
+    
+    <p class="score">Your Score:<span id="score">0</span></p>
+  <button class="startbtn" id="try-again-btn">Try Again</button>
+</div>
+
+<!-- Javascript -->
+<script src="../js/code.js"></script>
+
+<!-- Copyright -->
+<div class="copyright"> RELEASE V1.1 <br><br> Copyright © 2023 - Space Shooter by Bob Mijderwijk</div>
+
+</body>
+</html>
